@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:14-bullseye
+    restart: "always"
+    environment:
+      - POSTGRES_PASSWORD=p@ssword123
+      - POSTGRES_USER=parser_dev     
+  web:
+    build: .
+    volumes:
+      - .:/app
+    environment:
+      - DB_PASSWORD=p@ssword123
+      - DB_USER=parser_dev
+      - DB_HOST=postgres
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    tty: true
+    stdin_open: true

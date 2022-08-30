@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 1
+  date: 1
+  value: 1.5
+  cpf: 1
+  card: 1
+  time: 1
+  owner: MyString
+  name: MyString
+
+two:
+  type: 1
+  date: 1
+  value: 1.5
+  cpf: 1
+  card: 1
+  time: 1
+  owner: MyString
+  name: MyString
