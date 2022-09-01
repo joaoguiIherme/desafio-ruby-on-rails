@@ -1,0 +1,13 @@
+  <div class="card-footer bg-transparent border-dark">
+    <div class='mx-auto'>
+      <%= link_to 'Voltar', root_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+<br>
+<div>
+<%= form_for @transaction, url: import_new_transactions_path, html: { multipart: true } do |f| %>
+  <%= f.file_field :import_file %><br><br>
+  <%= f.submit %>
+<% end %>
+
+</div>

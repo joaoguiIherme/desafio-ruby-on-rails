@@ -1,4 +1,14 @@
-<div>
+<center> 
   <h1>Bem vindo ao CNAB Parser!</h1>
-  <p>Insira um arquivo: </p>
-</div>
+
+  <body>
+    <br><br><br>
+    <div class='mx-auto'>
+      <%= button_to 'Parsear novo arquivo CNAB', import_new_transactions_path, class: 'btn btn-success' %><br>
+   
+      <%= button_to "Listar todas as Transações", transactions_path, method: :get, class: 'btn btn-info' %><br>
+
+      <%= button_to "Sair", destroy_user_session_path, method: :delete, class: 'btn btn-warning' %> 
+    </div>
+  </body>
+</center>

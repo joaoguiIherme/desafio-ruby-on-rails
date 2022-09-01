@@ -1,0 +1,42 @@
+<div class="card-footer bg-transparent border-dark">
+  <div class='mx-auto'>
+    <%= link_to 'Voltar', root_path, class: 'btn btn-primary' %>
+    <%= link_to 'Listar por Loja', import_list_transactions_path, class: 'btn btn-warning' %>
+  </div>
+</div>
+
+<div class="card border-dark mb-3">
+  <div class="card-header">Lista de Transações</div>
+  <div class="card-body text-dark">
+    <table class="table table-active table-striped table-hover table-bordered" style="align-middle">
+      <thead>
+        <tr class="table-active">
+          <th scope="col">ID</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Data</th>
+          <th scope="col">Valor</th>
+          <th scope="col">CPF</th>
+          <th scope="col">Cartão</th>
+          <th scope="col">Horário</th>
+          <th scope="col">Proprietário</th>
+          <th scope="col">Imóvel</th>
+        </tr>
+      </thead>
+    <% @transactions.each do |tr| %>
+      <tbody>
+        <tr class="table-active">
+          <th scope="row"><%= tr.id %></th>
+          <td><%= tr.kind %></td>
+          <td><%= tr.date %></td>
+          <td><%= tr.value %></td>
+          <td><%= tr.cpf %></td>
+          <td><%= tr.card %></td>
+          <td><%= tr.time %></td>
+          <td><%= tr.owner %></td>
+          <td><%= tr.name %></td>
+        </tr>
+      </tbody>
+    <% end %>
+    </table>
+  </div>
+</div>
