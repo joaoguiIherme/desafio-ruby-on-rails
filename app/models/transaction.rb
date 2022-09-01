@@ -1,9 +1,11 @@
 class Transaction < ApplicationRecord
-  def import(import_file)
-    lines = import_file.read.split("\n")
+  belongs_to :owners, class_name: 'Owner', optional: true
 
-    lines.each do |line|
-      ImportService.parse line
-    end
-  end
+  validates :kind, presence: true, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+  validates :date, presence: true, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+  validates :value, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  validates :cpf, presence: true, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+  validates :time, presence: true, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+  validates :owner, presence: true
+  validates :name, presence: true
 end
